@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
 
+    public Interactable focus;
+
     public LayerMask movementMask;
 
     Camera cam;
@@ -26,10 +28,12 @@ public class PlayerController : MonoBehaviour {
             if(Physics.Raycast(ray, out hit, 100, movementMask))
             {
 
-                motor.MoveToPoint(hit.point);
+                Debug.Log("We hit " + hit.collider.name + " " + hit.point);
                 // Move our player to what we hit
+                motor.MoveToPoint(hit.point);
 
-                // Stop focusing any objects
+
+                RemoveFocus();
             }
         }
 
@@ -40,10 +44,24 @@ public class PlayerController : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                // Check if he hit an interactable
-                // If we did set it as our focus
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
             }
         }
+    }
 
+    void SetFocus (Interactable NewFocus)
+    {
+        focus = NewFocus;
+        motor.FollowTarget(NewFocus);
+    }
+
+    void RemoveFocus()
+    {
+        focus = null;
+        motor.StopFollowingTarget();
     }
 }
