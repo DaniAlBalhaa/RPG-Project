@@ -167,10 +167,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492429284868924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0919812fcb8a5b49889670727bf4458, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cabba7a5ebd3a04da43e46b37edbe0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 114266212093022878}
+  icon: {fileID: 114694107830351854}
   removeButton: {fileID: 114378677863098380}
 --- !u!114 &114694107830351854
 MonoBehaviour:
@@ -369,8 +369,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45, y: -57}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}

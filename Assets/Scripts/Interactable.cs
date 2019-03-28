@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Interactable : MonoBehaviour{
+public class Interactable : MonoBehaviour
+{
 
     public float radius = 3f;
     public Transform interactionTransform;
@@ -29,7 +30,7 @@ public class Interactable : MonoBehaviour{
         }
     }
 
-    public void OnFocused (Transform playerTransform)
+    public void OnFocused(Transform playerTransform)
     {
         isFocus = true;
         player = playerTransform;
@@ -42,8 +43,8 @@ public class Interactable : MonoBehaviour{
         player = null;
         hasInteracted = false;
     }
-    
-    void OnDrawGizmosSelected ()
+
+    void OnDrawGizmosSelected()
     {
         if (interactionTransform == null)
             interactionTransform = transform;
